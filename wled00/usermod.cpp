@@ -13,7 +13,13 @@
 //gets called once at boot. Do all initialization that doesn't depend on network here
 void userSetup()
 {
-  
+// 2021-03-02 OrangeMakers Roskilde Denmark
+// Next 3 lines are an addition to provide a push-button with GND/Low. 
+// The button can then be soldered directly on an ESP8266
+  #define BTNGNDPIN  5      // Button Ground pin. 
+  pinMode(BTNGNDPIN, OUTPUT);
+  digitalWrite(BTNGNDPIN, LOW); 
+
 }
 
 //gets called every time WiFi is (re-)connected. Initialize own network interfaces here
